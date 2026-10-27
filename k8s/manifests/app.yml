@@ -1,0 +1,78 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: statuscope-lite
+  namespace: {{ .Values.namespace }}
+spec:
+  type: {{ .Values.serviceType }}
+  selector:
+    app: statuscope-lite
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      {{- if eq .Values.serviceType "NodePort" }}
+      nodePort: {{ int .Values.nodePort }}
+      {{- end }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: statuscope-lite
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ int .Values.replicas }}
+  selector:
+    matchLabels:
+      app: statuscope-lite
+  template:
+    metadata:
+      labels:
+        app: statuscope-lite
+    spec:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 101
+        runAsGroup: 101
+        fsGroup: 101
+        seccompProfile: {type: RuntimeDefault}
+      volumes:
+        - name: tmp
+          emptyDir: {sizeLimit: 16Mi}
+      {{- if .Values.registrySecretName }}
+      imagePullSecrets:
+        - name: {{ .Values.registrySecretName }}
+      {{- end }}
+      containers:
+        - name: statuscope-lite
+          image: {{ .Values.image | quote }}
+          imagePullPolicy: {{ .Values.imagePullPolicy }}
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: {drop: [ALL]}
+          volumeMounts:
+            - {name: tmp, mountPath: /tmp}
+          ports:
+            - name: http
+              containerPort: 8080
+          resources:
+            requests:
+              cpu: 10m
+              memory: 16Mi
+            limits:
+              cpu: 100m
+              memory: 64Mi
+          startupProbe:
+            httpGet: {path: /healthz, port: http}
+            periodSeconds: 5
+            failureThreshold: 60
+          readinessProbe:
+            httpGet: {path: /healthz, port: http}
+            periodSeconds: 5
+            timeoutSeconds: 3
+          livenessProbe:
+            httpGet: {path: /healthz, port: http}
+            periodSeconds: 10
+            timeoutSeconds: 3

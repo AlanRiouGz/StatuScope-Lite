@@ -1,0 +1,557 @@
+{
+  "common": {
+    "language": {
+      "label": "Language",
+      "short": "EN"
+    },
+    "statuses": {
+      "confirmed": "Confirmed",
+      "suspected": "Suspected",
+      "active": "Active",
+      "noPriorityOutbreaks": "No priority outbreaks",
+      "noPriorityMunicipality": "No priority municipality",
+      "priorityMunicipality": "Priority municipality",
+      "priorityFocus": "Priority focus"
+    },
+    "units": {
+      "cases": "{{count}} cases",
+      "case": "{{count}} case",
+      "activeCases": "{{count}} active cases",
+      "activeOutbreaks": "{{count}} active outbreaks",
+      "activeOutbreak": "{{count}} active outbreak",
+      "priorityOutbreaks": "{{count}} priority outbreaks",
+      "priorityOutbreak": "{{count}} priority outbreak",
+      "priorityShort": "{{count}} priority",
+      "beds": "{{count}} beds",
+      "bed": "{{count}} bed",
+      "kilometers": "{{count}} km",
+      "withinKilometers": "Within {{count}} km",
+      "staffing": "{{doctors}} MD / {{nurses}} RN"
+    },
+    "risk": {
+      "high": "High",
+      "moderate": "Moderate",
+      "low": "Low",
+      "clear": "Clear",
+      "monitored": "Monitored"
+    },
+    "priority": {
+      "immediate": "Immediate",
+      "high": "High",
+      "review": "Review",
+      "routine": "Routine",
+      "operationalReview": "Operational review"
+    },
+    "analytics": {
+      "title": "Analytics",
+      "hero": {
+        "eyebrow": "Epidemiological analytics",
+        "doctorTitle": "Clinical signal changes in your surveillance radius",
+        "subtitle": "Uses outbreak start dates to detect new signals, compare them against the previous period, and prioritize what needs attention."
+      },
+      "actions": {
+        "refresh": "Refresh",
+        "retry": "Retry",
+        "expand": "Expand"
+      },
+      "filters": {
+        "radarRange": "Radar range"
+      },
+      "periods": {
+        "7": "Last 7 days",
+        "14": "Last 14 days",
+        "30": "Last 30 days"
+      },
+      "none": "None",
+      "error": "Analytics could not load: {{error}}",
+      "empty": {
+        "title": "No outbreak analytics are available for this radius yet.",
+        "text": "Try expanding the radar range or refreshing after the next outbreak CSV import."
+      },
+      "selectionRequired": {
+        "title": "Select a disease to view analytics.",
+        "text": "Metrics, the map, and recommendations are calculated only after choosing an available disease."
+      },
+      "metrics": {
+        "disease": {
+          "title": "Disease",
+          "caption": "selected"
+        },
+        "newOutbreaks": {
+          "title": "New outbreaks",
+          "caption": "in the last {{days}} days"
+        },
+        "previous": {
+          "title": "Previous period",
+          "caption": "in the previous {{days}} days"
+        },
+        "prediction": {
+          "title": "Prediction",
+          "caption": "in the next {{days}} days"
+        }
+      },
+      "methodology": {
+        "eyebrow": "Methodology",
+        "title": "How these metrics are calculated",
+        "doctorUse": "Clinical use",
+        "disease": {
+          "title": "Disease",
+          "text": "The selector starts with the disease with the most outbreaks in the initial 75 km municipal radius; then you can choose any disease in the current range."
+        },
+        "newOutbreaks": {
+          "title": "New outbreaks",
+          "text": "Counts active outbreaks for the selected disease whose started_at falls inside the chosen period and radius."
+        },
+        "previous": {
+          "title": "Previous period",
+          "text": "Counts outbreaks for the same disease in the immediately previous window of the same length."
+        },
+        "prediction": {
+          "title": "Prediction",
+          "text": "Projects upcoming starts using the difference between the current and previous windows; it is a planning estimate."
+        }
+      },
+      "selector": {
+        "eyebrow": "Selector",
+        "title": "Evaluated disease",
+        "hint": "Municipal / state",
+        "loading": "Loading diseases...",
+        "searchPlaceholder": "Select a disease",
+        "noResults": "No diseases found",
+        "state": "State",
+        "statePlaceholder": "Select a state",
+        "noStates": "No states found",
+        "outbreakCount": "{{count}} outbreaks",
+        "allDiseases": "Disease",
+        "disease": "Disease",
+        "infoTitle": "Available diseases",
+        "availableHere": "Available in selection",
+        "info": {
+          "system": "All diseases available in the system.",
+          "municipal": "Diseases available at municipal level.",
+          "state": "Diseases available at state level."
+        },
+        "scope": {
+          "municipal": "Municipal",
+          "state": "State"
+        },
+        "sort": {
+          "alphabetical": "Alphabetical",
+          "cases": "Most cases"
+        }
+      },
+      "map": {
+        "title": "Map by selected disease",
+        "subtitle": "Shows active hotspots for the evaluated disease inside the selected radius.",
+        "footerCases": "{{count}} current cases analysed",
+        "footerDisease": "{{disease}}: {{count}} current cases",
+        "updated": "Updated {{date}}",
+        "legend": {
+          "highGrowth": "High growth",
+          "moderateSignal": "Moderate signal",
+          "hospitalRegion": "Hospital region"
+        }
+      },
+      "zoneTrend": "{{disease}} is contributing {{cases}} in this surveillance radius. The start date is used to prioritize emerging hotspots.",
+      "ranking": {
+        "title": "Top 5 diseases by outbreaks",
+        "outbreaks": "{{count}} outbreaks",
+        "scope": "Selected radius",
+        "selected": "Evaluated disease",
+        "selectButton": "Select a disease from the ranking"
+      },
+      "diseaseDetail": {
+        "currentCases": "{{count}} current cases",
+        "weeklyGrowth": "{{value}}% outbreak starts",
+        "locations": "{{count}} locations",
+        "trend": "{{recent}} outbreaks started in the selected period versus {{previous}} in the previous comparable period."
+      },
+      "change": {
+        "eyebrow": "What changed",
+        "title": "Signal movement since the previous period",
+        "loadingSignals": "Loading outbreak signals...",
+        "loadingComparison": "Comparing against the previous period...",
+        "periodComparison": "{{recent}} outbreak signals started in the last {{days}} days versus {{previous}} in the previous comparable window.",
+        "topDisease": "{{disease}} is the leading emerging signal with {{starts}} new starts and {{cases}} active cases.",
+        "noTopDisease": "No dominant emerging disease was detected in this radius.",
+        "highRisk": "{{count}} disease groups are above the high-risk threshold and should be reviewed first.",
+        "noHighRisk": "No disease group is currently above the high-risk threshold.",
+        "adminAction": "Operational planning should use the {{direction}} signal to tune staffing, tests, beds, and isolation readiness.",
+        "doctorAction": "Clinical teams should use the {{direction}} signal to tune differential diagnosis and test prioritization."
+      },
+      "directions": {
+        "upward": "upward",
+        "downward": "downward"
+      },
+      "trend": {
+        "eyebrow": "Trend",
+        "title": "Outbreak starts by recent window",
+        "windowCaption": "window"
+      },
+      "diseaseSummary": {
+        "eyebrow": "Disease summary",
+        "text": "{{disease}} has {{recent}} new outbreaks in the selected window.",
+        "municipalCases": "Municipal cases",
+        "stateCases": "State cases"
+      },
+      "risk": {
+        "eyebrow": "Risk reading",
+        "title": "Risk summary",
+        "elevating": "Factors raising alert",
+        "reducing": "Factors reducing alert",
+        "level": {
+          "high": "High risk",
+          "moderate": "Moderate risk",
+          "low": "Low risk"
+        },
+        "summary": {
+          "none": "Select a disease to calculate risk.",
+          "high": "{{disease}} needs priority follow-up due to volume, growth, or spread.",
+          "moderate": "{{disease}} has a moderate signal that should be watched closely.",
+          "low": "{{disease}} shows a low signal with contained behavior."
+        },
+        "factors": {
+          "noSelection": "No disease selected.",
+          "recentGrowth": "{{current}} recent outbreaks versus {{previous}} in the previous window.",
+          "noRecentGrowth": "Does not exceed the previous window.",
+          "highCases": "{{count}} associated active cases.",
+          "containedCases": "{{count}} active cases, below the high threshold.",
+          "dispersed": "Present across {{count}} locations.",
+          "limitedSpread": "Limited distribution across {{count}} locations.",
+          "projectedIncrease": "Prediction rises to {{count}} outbreaks.",
+          "stableProjection": "Prediction does not increase versus the current window.",
+          "noElevating": "No additional factors are raising alert.",
+          "noReducing": "No clear factors are reducing alert."
+        }
+      },
+      "recommendations": {
+        "operations": "Operations",
+        "clinical": "Clinical",
+        "title": "Recommended next actions",
+        "admin": {
+          "supplies": "Review supplies and staffing assumptions for {{disease}} response pathways.",
+          "standard": "Keep standard readiness while no dominant emerging signal is detected.",
+          "reserve": "Reserve escalation capacity for high-risk disease groups before the next intake cycle.",
+          "monitor": "Maintain normal surge monitoring; no high-risk cluster is above threshold.",
+          "plan": "Plan for approximately {{count}} new outbreak starts next comparable period if the current signal persists."
+        },
+        "doctor": {
+          "prioritize": "Prioritize {{disease}} in differential diagnosis for compatible symptoms.",
+          "broad": "Continue broad differential diagnosis; no dominant emerging disease is detected.",
+          "tests": "Use recent-start outbreak signals to guide test selection and patient questioning.",
+          "baseline": "No new outbreak starts were detected in the selected period; keep baseline triage.",
+          "escalate": "Escalate clinical suspicion for high-risk groups when presentation and location match.",
+          "standard": "Current signal does not require elevated suspicion beyond standard protocols."
+        }
+      },
+      "overlays": {
+        "diseaseDetail": "Disease detail",
+        "zoneDetail": "Zone detail",
+        "currentCases": "Current cases",
+        "weeklyGrowth": "Weekly growth",
+        "riskLevel": "Risk level",
+        "affectedZones": "Affected zones",
+        "primaryDisease": "Primary disease",
+        "radius": "Radius",
+        "priority": "Priority",
+        "observedTrend": "Observed trend"
+      }
+    }
+  },
+  "layout": {
+    "sidebar": {
+      "healthcare": "HEALTHCARE",
+      "analytics": "ANALYTICS",
+      "dashboard": "Dashboard",
+      "diagnosis": "Diagnosis",
+      "analyticsNav": "Analytics",
+      "resources": "Resources",
+      "recommendations": "Recommendations",
+      "users": "Users",
+      "logout": "Log out"
+    }
+  },
+  "doctor": {
+    "diagnosis": {
+      "sectionLabel": "Diagnosis",
+      "searchPlaceholder": "Search medical records...",
+      "fallbackDoctor": "Doctor",
+      "caseMeta": {
+        "new": "New case - not saved yet",
+        "saved": "Case ID: #{{id}} - Started {{date}}"
+      },
+      "hero": {
+        "eyebrow": "Clinical Intelligence Workspace",
+        "title": "Differential diagnosis with locality-aware risk context",
+        "description": "Evaluate the patient, contrast symptoms with nearby outbreaks, and confirm the most reliable diagnostic path.",
+        "status": "Status: {{status}}",
+        "ready": "Ready to start"
+      },
+      "form": {
+        "title": "Patient Evaluation",
+        "patientName": "Patient Name",
+        "patientNamePlaceholder": "Patient full name",
+        "birthDate": "Birth Date",
+        "sex": "Sex",
+        "sexPlaceholder": "Select",
+        "sexOptions": {
+          "male": "Male",
+          "female": "Female",
+          "other": "Other"
+        },
+        "symptoms": "Symptoms Descriptor",
+        "symptomsPlaceholder": "Describe patient symptoms, duration, severity...",
+        "files": "Lab Results & Imaging",
+        "fileDescription": "Drag and drop files or",
+        "fileBrowse": "browse",
+        "fileUpTo": "up to"
+      },
+      "actions": {
+        "runAnalysis": "Run AI Analysis",
+        "analyzing": "Analyzing...",
+        "saving": "Saving..."
+      },
+      "assistant": {
+        "title": "Diagnosis Assistant",
+        "subtitle": "Cross-checking symptoms with nearby epidemiological activity",
+        "thinking": "Thinking",
+        "emptyTitle": "Ready for patient context",
+        "emptyText": "Run the analysis or ask a follow-up question to query the backend assistant.",
+        "insight": "AI Differential Insight",
+        "consulting": "Consulting diagnosis assistant...",
+        "translating": "Translating response...",
+        "inputPlaceholder": "Continue the conversation...",
+        "analysisPrompt": "Evaluate this patient and suggest differential diagnoses, risk factors, and next diagnostic steps.",
+        "analysisPromptWithSymptoms": "Evaluate this patient and suggest differential diagnoses, risk factors, and next diagnostic steps. Symptoms: {{symptoms}}"
+      },
+      "outbreakContext": {
+        "state": "Hospital state context: {{state}}.",
+        "generic": "Hospital state context.",
+        "noSignals": "No active outbreak signals matched this case.",
+        "signal": "{{count}} disease signal",
+        "signals": "{{count}} disease signals",
+        "headline": "{{summary}} covering {{total}} reported cases.",
+        "highestActivity": "Highest activity: {{diseases}}."
+      },
+      "suggestions": {
+        "heading": "Possible related local alerts",
+        "primary": "primary",
+        "localityRisk": "Risk",
+        "unknown": "Unknown"
+      },
+      "riskLevels": {
+        "high": "High",
+        "medium": "Medium",
+        "low": "Low",
+        "none": "No signal"
+      },
+      "localAlerts": {
+        "caseSummary": "{{count}} related cases across {{municipalities}} nearby municipalities.",
+        "totalCases": "Related cases",
+        "stateDetailTitle": "State-level outbreaks",
+        "detailTitle": "Top 5 nearby municipalities",
+        "cases": "{{count}} cases",
+        "stateOnly": "The available signal is statewide; no nearby municipality breakdown is available for this alert."
+      },
+      "tests": {
+        "title": "Recommended Tests"
+      },
+      "finalize": {
+        "title": "Finalize Diagnosis",
+        "subtitle": "Select a catalog disease, then confirm or override the assistant.",
+        "currentRecommendation": "Current AI recommendation",
+        "selectAnotherDisease": "Select another disease",
+        "searchPlaceholder": "Search disease catalog...",
+        "selectedDisease": "Selected disease",
+        "notesPlaceholder": "Optional note about why this diagnosis was confirmed or overridden...",
+        "confirmAi": "Confirm diagnosis",
+        "overrideAi": "Override AI Diagnosis",
+        "saveFinal": "Save Final Diagnosis",
+        "otherDisease": "Other disease",
+        "otherDiseasePlaceholder": "Type the disease"
+      },
+      "feedback": {
+        "saving": "Saving diagnosis feedback...",
+        "selectDiseaseError": "Select a normalized disease from the database before finalizing.",
+        "otherDiseaseRequired": "Type the other disease before finalizing.",
+        "status": {
+          "confirmed": "AI diagnosis confirmed",
+          "overridden": "AI diagnosis overridden",
+          "doctorOnly": "Doctor diagnosis saved"
+        },
+        "success": {
+          "confirmed": "Diagnosis confirmed and saved.",
+          "overridden": "Diagnosis override saved.",
+          "doctorOnly": "Final diagnosis saved."
+        }
+      },
+      "validation": {
+        "patientNameRequired": "Patient name is required.",
+        "birthDateRequired": "Birth date is required.",
+        "birthDateFormat": "Birth date must use YYYY-MM-DD format.",
+        "sexRequired": "Patient sex is required.",
+        "symptomsRequired": "Symptoms are required."
+      },
+      "errors": {
+        "loadThread": "Unable to load the saved assistant thread.",
+        "restoreEvaluation": "Unable to restore the active diagnosis evaluation.",
+        "loadDiseases": "Unable to load diseases.",
+        "saveEvaluation": "Unable to save the patient evaluation.",
+        "reachAssistant": "Unable to reach the diagnosis assistant.",
+        "uploadFile": "Unable to upload the selected file.",
+        "recordFeedback": "Unable to record diagnosis feedback.",
+        "webUploadOnly": "File upload is currently available in the web app only.",
+        "readFile": "Unable to read the selected file.",
+        "translateHistory": "Some assistant responses could not be translated. Showing the original text."
+      }
+    },
+    "dashboard": {
+      "sectionLabel": "Dashboard",
+      "screenSummary": "Operational summary of outbreaks, alerts, and hospital capacity.",
+      "hero": {
+        "eyebrow": "Operational Dashboard",
+        "title": "Outbreak surveillance & hospital monitoring",
+        "description": "Real-time monitoring of disease outbreaks, active alerts, and hospital metrics within your surveillance radius."
+      },
+      "searchPlaceholder": "Search medical records...",
+      "loading": "Loading doctor dashboard data...",
+      "errorTitle": "Dashboard data unavailable",
+      "retry": "Retry",
+      "radiusControl": {
+        "label": "Analysis range",
+        "contextTitle": "Outbreak zone",
+        "contextDescription": "Adjust the radius used to recalculate the dashboard."
+      },
+      "map": {
+        "title": "Live Heatmap",
+        "overlayTitle": "Live Heatmap",
+        "secure": "Secure",
+        "highRisk": "High Risk",
+        "emerging": "Emerging",
+        "lowRisk": "Low Risk",
+        "hospitalNode": "Hospital Node",
+        "expand": "Expand",
+        "viewOtherStates": "View other states",
+        "stateSelector": "State selector",
+        "stateOutbreaks": "State outbreaks",
+        "backToStates": "Back",
+        "selectStateHint": "Select a state to inspect municipal outbreaks",
+        "stateOutbreakCount": "{{count}} municipal outbreak signals",
+        "lastSyncPending": "Last Sync: Pending",
+        "lastSync": "Last Sync: {{time}}"
+      },
+      "alerts": {
+        "title": "Most Relevant Active Outbreaks",
+        "emptyTitle": "No active disease alerts",
+        "emptyDescription": "No active outbreak signals are currently available for this hospital context.",
+        "activityTitle": "{{disease}} activity",
+        "activityDescription": "{{cases}} in {{area}}. Status: {{status}}.",
+        "activeCasesLabel": "Active cases",
+        "showMore": "Show more outbreaks",
+        "moreEyebrow": "Active outbreaks",
+        "moreTitle": "More contextual outbreaks"
+      },
+      "diseaseBreakdown": {
+        "title": "Disease Breakdown",
+        "localTitle": "Outbreaks in the municipality and surroundings",
+        "stateTitle": "State-level outbreaks",
+        "totalActiveCases": "Total Active Cases",
+        "totalStateCases": "Total State Cases",
+        "outbreakContext": "Outbreak Context",
+        "municipalitySurroundings": "{{municipality}} and surroundings",
+        "stateContext": "State",
+        "hospitalRegion": "Hospital region",
+        "exportReport": "Export Full Report"
+      },
+      "reports": {
+        "localOptionTitle": "Municipal outbreaks",
+        "stateOptionTitle": "State outbreaks",
+        "bothOptionTitle": "Municipal and state",
+        "bothOptionDescription": "Includes both contexts in one PDF.",
+        "pdfTitle": "Epidemiological outbreak report",
+        "hospital": "Hospital",
+        "generatedAt": "Generated",
+        "scope": "Scope",
+        "localScope": "Municipal",
+        "stateScope": "State",
+        "bothScope": "Municipal and state",
+        "stateSectionTitle": "State outbreaks",
+        "localSectionTitle": "Municipal outbreaks",
+        "confirmedSection": "Confirmed",
+        "suspectedSection": "Suspected",
+        "diseaseColumn": "Disease",
+        "locationColumn": "Location",
+        "casesColumn": "Cases",
+        "statusColumn": "Status",
+        "scopeColumn": "Scope",
+        "outbreaksColumn": "Outbreaks",
+        "back": "Back",
+        "downloadReport": "Download report",
+        "previewSubtitle": "Review {{count}} outbreaks before accepting the download.",
+        "previewUnavailable": "Document preview is not available in this environment."
+      },
+      "overlays": {
+        "clinicalMetric": "Clinical Metric",
+        "currentValue": "Current Value",
+        "signal": "Signal",
+        "metricInsights": "Relevant clinical context",
+        "recommendedAction": "Recommended Action",
+        "alertDetail": "Alert Detail",
+        "area": "Area",
+        "priority": "Priority",
+        "zoneDetail": "Outbreak Detail",
+        "hospitalDetail": "Hospital Details",
+        "riskLevel": "Risk Level",
+        "primaryDisease": "Disease",
+        "state": "State",
+        "municipality": "Municipality",
+        "status": "Status",
+        "cases": "Cases",
+        "radius": "Radius",
+        "reportPreview": "Report Preview",
+        "reportTitle": "Disease Breakdown Summary",
+        "reportSubtitle": "Regional burden and clinical trend overview for the active diseases currently tracked.",
+        "topSignal": "Top Signal",
+        "topSignalText": "The leading disease in the active context remains the strongest signal for clinical triage.",
+        "areaWatch": "Area Watch",
+        "areaWatchText": "Nearby outbreak zones should stay under active observation this cycle.",
+        "clinicalRecommendation": "Clinical Recommendation",
+        "clinicalRecommendationText": "Sustain triage readiness and keep compatible high-risk presentations under rapid escalation review."
+      },
+      "metrics": {
+        "active-cases-nearby": {
+          "title": "Active Cases Nearby",
+          "subtitle": "Active outbreak cases in hospital context",
+          "detailSummary": "Sum of active municipal outbreaks in the hospital radius plus active state-level outbreaks for the hospital state.",
+          "signalLabel": "Active regional load",
+          "insightCriteria": "Nearby outbreaks ranked by severity, then case count.",
+          "recommendedAction": "Keep triage aligned with diseases currently active near the hospital."
+        },
+        "highest-case-disease": {
+          "title": "Highest Case Disease",
+          "subtitle": "Largest active case count in current context",
+          "detailSummary": "This replaces projected growth until weekly historical series are available.",
+          "signalLabel": "Largest current burden",
+          "insightCriteria": "Locations with the most cases of the dominant disease.",
+          "recommendedAction": "Use this signal as epidemiological context, not as a standalone diagnosis."
+        },
+        "local-risk-level": {
+          "title": "Local Risk Level",
+          "subtitle": "Based on active outbreak count and total cases",
+          "detailSummary": "Risk is derived from active outbreak volume in the hospital geographic context.",
+          "signalLabel": "Regional pressure",
+          "insightCriteria": "Active outbreaks closest to the hospital.",
+          "recommendedAction": "Review nearby outbreaks before evaluating compatible symptoms."
+        },
+        "priority-municipality": {
+          "title": "Priority Municipality",
+          "subtitle": "Highest concentration of priority outbreaks",
+          "detailSummary": "Groups high and moderate severity municipal outbreaks inside the selected radius.",
+          "signalLabel": "Priority concentration",
+          "insightCriteria": "Priority outbreaks in the municipality ranked by severity and cases.",
+          "recommendedAction": "Prioritize this municipality when reviewing compatible symptoms and nearby outbreak context."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+node_modules
+.expo
+.git
+.env
+.env.*
+reports
+coverage
+__tests__
+.harness
+k8s
+*.md

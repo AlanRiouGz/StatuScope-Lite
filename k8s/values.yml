@@ -1,0 +1,9 @@
+namespace: <+infra.namespace>
+image: <+artifact.image>
+imagePullPolicy: IfNotPresent
+registrySecretName: statuscope-lite-registry
+replicas: 1
+serviceType: ClusterIP
+nodePort: 30083
+registryUsername: <+secrets.getValue("username-harness-SA")>
+registryPassword: <+secrets.getValue("PAT-Harness-SA")>

@@ -1,0 +1,673 @@
+{
+  "common": {
+    "language": {
+      "label": "Idioma",
+      "short": "ES"
+    },
+    "statuses": {
+      "confirmed": "Confirmado",
+      "suspected": "Sospechoso",
+      "active": "Activo",
+      "noPriorityOutbreaks": "Sin brotes prioritarios",
+      "noPriorityMunicipality": "Sin municipio prioritario",
+      "priorityMunicipality": "Municipio prioritario",
+      "priorityFocus": "Foco prioritario"
+    },
+    "units": {
+      "cases": "{{count}} casos",
+      "case": "{{count}} caso",
+      "activeCases": "{{count}} casos activos",
+      "activeOutbreaks": "{{count}} brotes activos",
+      "activeOutbreak": "{{count}} brote activo",
+      "priorityOutbreaks": "{{count}} brotes prioritarios",
+      "priorityOutbreak": "{{count}} brote prioritario",
+      "priorityShort": "{{count}} prioritarios",
+      "beds": "{{count}} camas",
+      "bed": "{{count}} cama",
+      "kilometers": "{{count}} km",
+      "withinKilometers": "Dentro de {{count}} km",
+      "staffing": "{{doctors}} medicos / {{nurses}} enfermeros"
+    },
+    "risk": {
+      "high": "Alto",
+      "moderate": "Moderado",
+      "low": "Bajo",
+      "clear": "Sin senales",
+      "monitored": "Monitoreado"
+    },
+    "priority": {
+      "immediate": "Inmediata",
+      "high": "Alta",
+      "review": "Revision",
+      "routine": "Rutina",
+      "operationalReview": "Revision operativa"
+    },
+    "analytics": {
+      "title": "Analíticas",
+      "hero": {
+        "eyebrow": "Analitica epidemiologica",
+        "doctorTitle": "Cambios de senal clinica en tu radio de vigilancia",
+        "subtitle": "Usa las fechas de inicio de brotes para detectar senales nuevas, compararlas contra el periodo anterior y priorizar lo que requiere atencion."
+      },
+      "actions": {
+        "refresh": "Actualizar",
+        "retry": "Reintentar",
+        "expand": "Expandir"
+      },
+      "filters": {
+        "radarRange": "Rango de radar"
+      },
+      "periods": {
+        "7": "Ultimos 7 dias",
+        "14": "Ultimos 14 dias",
+        "30": "Ultimos 30 dias"
+      },
+      "none": "Ninguna",
+      "error": "No se pudo cargar la analitica: {{error}}",
+      "empty": {
+        "title": "Todavia no hay analitica de brotes para este radio.",
+        "text": "Intenta ampliar el radio de radar o actualizar despues de la siguiente ingesta del CSV de brotes."
+      },
+      "selectionRequired": {
+        "title": "Selecciona una enfermedad para ver la analitica.",
+        "text": "Las metricas, el mapa y las recomendaciones se calculan solo despues de elegir una enfermedad disponible."
+      },
+      "metrics": {
+        "disease": {
+          "title": "Enfermedad",
+          "caption": "seleccionada"
+        },
+        "newOutbreaks": {
+          "title": "Nuevos brotes",
+          "caption": "en los ultimos {{days}} dias"
+        },
+        "previous": {
+          "title": "Periodo anterior",
+          "caption": "en los {{days}} dias previos"
+        },
+        "prediction": {
+          "title": "Prediccion",
+          "caption": "en los proximos {{days}} dias"
+        }
+      },
+      "methodology": {
+        "eyebrow": "Metodologia",
+        "title": "Como se calculan estas metricas",
+        "doctorUse": "Uso clinico",
+        "disease": {
+          "title": "Enfermedad",
+          "text": "El selector inicia con la enfermedad con mas brotes en el radio municipal inicial de 75 km; despues puedes elegir cualquier enfermedad del rango actual."
+        },
+        "newOutbreaks": {
+          "title": "Nuevos brotes",
+          "text": "Cuenta brotes activos de la enfermedad seleccionada cuyo started_at cae dentro del periodo y radio elegidos."
+        },
+        "previous": {
+          "title": "Periodo anterior",
+          "text": "Cuenta brotes de la misma enfermedad en una ventana inmediatamente anterior del mismo tamano."
+        },
+        "prediction": {
+          "title": "Prediccion",
+          "text": "Proyecta los proximos inicios usando la diferencia entre la ventana actual y la anterior; es una estimacion de planeacion."
+        }
+      },
+      "selector": {
+        "eyebrow": "Selector",
+        "title": "Enfermedad evaluada",
+        "hint": "Municipal / estatal",
+        "loading": "Cargando enfermedades...",
+        "searchPlaceholder": "Seleccione una enfermedad",
+        "noResults": "No se encontraron enfermedades",
+        "state": "Estado",
+        "statePlaceholder": "Selecciona un estado",
+        "noStates": "No se encontraron estados",
+        "outbreakCount": "{{count}} brotes",
+        "allDiseases": "Enfermedad",
+        "disease": "Enfermedad",
+        "infoTitle": "Enfermedades disponibles",
+        "availableHere": "Disponible en la selección",
+        "info": {
+          "system": "Todas las enfermedades disponibles en el sistema.",
+          "municipal": "Enfermedades disponibles a nivel municipal.",
+          "state": "Enfermedades disponibles a nivel estatal."
+        },
+        "scope": {
+          "municipal": "Municipal",
+          "state": "Estatal"
+        },
+        "sort": {
+          "alphabetical": "Orden alfabético",
+          "cases": "Más casos"
+        }
+      },
+      "map": {
+        "title": "Mapa por enfermedad seleccionada",
+        "subtitle": "Muestra hotspots activos de la enfermedad evaluada dentro del radio seleccionado.",
+        "footerCases": "{{count}} casos actuales analizados",
+        "footerDisease": "{{disease}}: {{count}} casos actuales",
+        "updated": "Actualizado {{date}}",
+        "legend": {
+          "highGrowth": "Crecimiento alto",
+          "moderateSignal": "Senal moderada",
+          "hospitalRegion": "Region hospitalaria"
+        }
+      },
+      "zoneTrend": "{{disease}} aporta {{cases}} en este radio de vigilancia. La fecha de inicio se usa para priorizar hotspots emergentes.",
+      "ranking": {
+        "title": "Top 5 enfermedades por brotes",
+        "outbreaks": "{{count}} brotes",
+        "scope": "Radio seleccionado",
+        "selected": "Enfermedad evaluada",
+        "selectButton": "Selecciona una enfermedad del ranking"
+      },
+      "diseaseDetail": {
+        "currentCases": "{{count}} casos actuales",
+        "weeklyGrowth": "{{value}}% inicios de brote",
+        "locations": "{{count}} ubicaciones",
+        "trend": "{{recent}} brotes iniciaron en el periodo seleccionado contra {{previous}} en el periodo anterior comparable."
+      },
+      "change": {
+        "eyebrow": "Que cambio",
+        "title": "Movimiento de senal contra el periodo anterior",
+        "loadingSignals": "Cargando senales de brotes...",
+        "loadingComparison": "Comparando contra el periodo anterior...",
+        "periodComparison": "{{recent}} senales de brote iniciaron en los ultimos {{days}} dias contra {{previous}} en la ventana comparable anterior.",
+        "topDisease": "{{disease}} lidera la senal emergente con {{starts}} nuevos inicios y {{cases}} casos activos.",
+        "noTopDisease": "No se detecto una enfermedad emergente dominante en este radio.",
+        "highRisk": "{{count}} grupos de enfermedad superan el umbral de alto riesgo y deben revisarse primero.",
+        "noHighRisk": "Ningun grupo de enfermedad supera actualmente el umbral de alto riesgo.",
+        "adminAction": "Planeacion operativa debe usar la senal {{direction}} para ajustar personal, pruebas, camas y aislamiento.",
+        "doctorAction": "Equipos clinicos deben usar la senal {{direction}} para ajustar diagnostico diferencial y priorizacion de pruebas."
+      },
+      "directions": {
+        "upward": "al alza",
+        "downward": "a la baja"
+      },
+      "trend": {
+        "eyebrow": "Tendencia",
+        "title": "Inicios de brotes por ventana reciente",
+        "windowCaption": "ventana"
+      },
+      "diseaseSummary": {
+        "eyebrow": "Resumen de enfermedad",
+        "text": "{{disease}} registra {{recent}} brotes nuevos en la ventana seleccionada.",
+        "municipalCases": "Casos municipales",
+        "stateCases": "Casos estatales"
+      },
+      "risk": {
+        "eyebrow": "Lectura de riesgo",
+        "title": "Resumen de riesgo",
+        "elevating": "Factores que elevan la alerta",
+        "reducing": "Factores que reducen la alerta",
+        "level": {
+          "high": "Riesgo alto",
+          "moderate": "Riesgo moderado",
+          "low": "Riesgo bajo"
+        },
+        "summary": {
+          "none": "Selecciona una enfermedad para calcular el riesgo.",
+          "high": "{{disease}} requiere seguimiento prioritario por su volumen, crecimiento o dispersion.",
+          "moderate": "{{disease}} mantiene una senal moderada que conviene observar de cerca.",
+          "low": "{{disease}} muestra una senal baja con comportamiento contenido."
+        },
+        "factors": {
+          "noSelection": "Sin enfermedad seleccionada.",
+          "recentGrowth": "{{current}} brotes recientes contra {{previous}} en la ventana anterior.",
+          "noRecentGrowth": "No supera los brotes de la ventana anterior.",
+          "highCases": "{{count}} casos activos asociados.",
+          "containedCases": "{{count}} casos activos, por debajo del umbral alto.",
+          "dispersed": "Presencia en {{count}} ubicaciones.",
+          "limitedSpread": "Distribucion limitada a {{count}} ubicaciones.",
+          "projectedIncrease": "La prediccion sube a {{count}} brotes.",
+          "stableProjection": "La prediccion no aumenta contra la ventana actual.",
+          "noElevating": "No hay factores adicionales que eleven la alerta.",
+          "noReducing": "No hay factores claros que reduzcan la alerta."
+        }
+      },
+      "recommendations": {
+        "operations": "Operaciones",
+        "clinical": "Clinico",
+        "title": "Siguientes acciones recomendadas",
+        "admin": {
+          "supplies": "Revisar insumos y supuestos de personal para rutas de respuesta a {{disease}}.",
+          "standard": "Mantener preparacion estandar mientras no haya una senal emergente dominante.",
+          "reserve": "Reservar capacidad de escalamiento para grupos de alto riesgo antes del siguiente ciclo de admision.",
+          "monitor": "Mantener monitoreo normal de saturacion; no hay cluster de alto riesgo sobre el umbral.",
+          "plan": "Planear aproximadamente {{count}} nuevos inicios de brote en el siguiente periodo comparable si la senal persiste."
+        },
+        "doctor": {
+          "prioritize": "Priorizar {{disease}} en el diagnostico diferencial cuando los sintomas sean compatibles.",
+          "broad": "Mantener diagnostico diferencial amplio; no se detecta enfermedad emergente dominante.",
+          "tests": "Usar senales de inicio reciente para guiar seleccion de pruebas e interrogatorio.",
+          "baseline": "No se detectaron nuevos inicios de brote en el periodo seleccionado; mantener triaje basal.",
+          "escalate": "Elevar sospecha clinica para grupos de alto riesgo cuando presentacion y ubicacion coincidan.",
+          "standard": "La senal actual no requiere sospecha elevada fuera de protocolos estandar."
+        }
+      },
+      "overlays": {
+        "diseaseDetail": "Detalle de enfermedad",
+        "zoneDetail": "Detalle de zona",
+        "currentCases": "Casos actuales",
+        "weeklyGrowth": "Crecimiento semanal",
+        "riskLevel": "Nivel de riesgo",
+        "affectedZones": "Zonas afectadas",
+        "primaryDisease": "Enfermedad principal",
+        "radius": "Radio",
+        "priority": "Prioridad",
+        "observedTrend": "Tendencia observada"
+      }
+    }
+  },
+  "layout": {
+    "sidebar": {
+      "healthcare": "SALUD",
+      "analytics": "ANALITICA",
+      "dashboard": "Panel",
+      "diagnosis": "Diagnostico",
+      "analyticsNav": "Analitica",
+      "resources": "Recursos",
+      "recommendations": "Recomendaciones",
+      "users": "Usuarios",
+      "logout": "Cerrar sesion"
+    }
+  },
+  "doctor": {
+    "diagnosis": {
+      "sectionLabel": "Diagnóstico",
+      "searchPlaceholder": "Buscar expedientes médicos...",
+      "fallbackDoctor": "Doctor",
+      "caseMeta": {
+        "new": "Caso nuevo - aún no guardado",
+        "saved": "ID del caso: #{{id}} - Iniciado {{date}}"
+      },
+      "hero": {
+        "eyebrow": "Espacio de inteligencia clínica",
+        "title": "Diagnóstico diferencial con contexto de riesgo local",
+        "description": "Evalúa al paciente, contrasta síntomas con brotes cercanos y confirma la ruta diagnóstica más confiable.",
+        "status": "Estado: {{status}}",
+        "ready": "Listo para iniciar"
+      },
+      "form": {
+        "title": "Evaluación del paciente",
+        "patientName": "Nombre del paciente",
+        "patientNamePlaceholder": "Nombre completo del paciente",
+        "birthDate": "Fecha de nacimiento",
+        "sex": "Sexo",
+        "sexPlaceholder": "Seleccionar",
+        "sexOptions": {
+          "male": "Masculino",
+          "female": "Femenino",
+          "other": "Otro"
+        },
+        "symptoms": "Descripción de síntomas",
+        "symptomsPlaceholder": "Describe síntomas, duración, severidad...",
+        "files": "Resultados de laboratorio e imagen",
+        "fileDescription": "Arrastra y suelta archivos o",
+        "fileBrowse": "explorar",
+        "fileUpTo": "hasta"
+      },
+      "actions": {
+        "runAnalysis": "Ejecutar análisis IA",
+        "analyzing": "Analizando...",
+        "saving": "Guardando..."
+      },
+      "assistant": {
+        "title": "Asistente de diagnóstico",
+        "subtitle": "Contrasta síntomas con actividad epidemiológica cercana",
+        "thinking": "Pensando",
+        "emptyTitle": "Listo para el contexto del paciente",
+        "emptyText": "Ejecuta el análisis o haz una pregunta de seguimiento al asistente.",
+        "insight": "Insight diferencial de IA",
+        "consulting": "Consultando al asistente de diagnóstico...",
+        "translating": "Traduciendo respuesta...",
+        "inputPlaceholder": "Continúa con la conversación...",
+        "analysisPrompt": "Evalúa este paciente y sugiere diagnósticos diferenciales, factores de riesgo y siguientes pasos diagnósticos.",
+        "analysisPromptWithSymptoms": "Evalúa este paciente y sugiere diagnósticos diferenciales, factores de riesgo y siguientes pasos diagnósticos. Síntomas: {{symptoms}}"
+      },
+      "outbreakContext": {
+        "state": "Contexto estatal del hospital: {{state}}.",
+        "generic": "Contexto estatal del hospital.",
+        "noSignals": "No se encontraron señales de brotes activos relacionadas con este caso.",
+        "signal": "{{count}} señal de enfermedad",
+        "signals": "{{count}} señales de enfermedad",
+        "headline": "{{summary}} que cubren {{total}} casos reportados.",
+        "highestActivity": "Mayor actividad: {{diseases}}."
+      },
+      "suggestions": {
+        "heading": "Posibles alertas locales relacionadas",
+        "primary": "principal",
+        "localityRisk": "Riesgo",
+        "unknown": "Desconocido"
+      },
+      "riskLevels": {
+        "high": "Alto",
+        "medium": "Medio",
+        "low": "Bajo",
+        "none": "Sin señal"
+      },
+      "localAlerts": {
+        "caseSummary": "{{count}} casos relacionados en {{municipalities}} municipios cercanos.",
+        "totalCases": "Casos relacionados",
+        "stateDetailTitle": "Brotes a nivel estatal",
+        "detailTitle": "Top 5 municipios cercanos",
+        "cases": "{{count}} casos",
+        "stateOnly": "La señal disponible es estatal; no hay desglose municipal cercano para esta alerta."
+      },
+      "tests": {
+        "title": "Pruebas recomendadas"
+      },
+      "finalize": {
+        "title": "Finalizar diagnóstico",
+        "subtitle": "Selecciona una enfermedad del catálogo y confirma o reemplaza al asistente.",
+        "currentRecommendation": "Recomendación actual de IA",
+        "selectAnotherDisease": "Seleccionar otra enfermedad",
+        "searchPlaceholder": "Buscar en catálogo de enfermedades...",
+        "selectedDisease": "Enfermedad seleccionada",
+        "notesPlaceholder": "Nota opcional sobre por qué se confirmó o reemplazó este diagnóstico...",
+        "confirmAi": "Confirmar diagnóstico",
+        "overrideAi": "Reemplazar diagnóstico IA",
+        "saveFinal": "Guardar diagnóstico final",
+        "otherDisease": "Otra enfermedad",
+        "otherDiseasePlaceholder": "Escribe la enfermedad"
+      },
+      "feedback": {
+        "saving": "Guardando retroalimentación diagnóstica...",
+        "selectDiseaseError": "Selecciona una enfermedad normalizada de la base de datos antes de finalizar.",
+        "otherDiseaseRequired": "Escribe el nombre de la otra enfermedad antes de finalizar.",
+        "status": {
+          "confirmed": "Diagnóstico IA confirmado",
+          "overridden": "Diagnóstico IA reemplazado",
+          "doctorOnly": "Diagnóstico del doctor guardado"
+        },
+        "success": {
+          "confirmed": "Diagnóstico confirmado y guardado.",
+          "overridden": "Reemplazo de diagnóstico guardado.",
+          "doctorOnly": "Diagnóstico final guardado."
+        }
+      },
+      "validation": {
+        "patientNameRequired": "El nombre del paciente es obligatorio.",
+        "birthDateRequired": "La fecha de nacimiento es obligatoria.",
+        "birthDateFormat": "La fecha de nacimiento debe usar el formato AAAA-MM-DD.",
+        "sexRequired": "El sexo del paciente es obligatorio.",
+        "symptomsRequired": "Los síntomas son obligatorios."
+      },
+      "errors": {
+        "loadThread": "No se pudo cargar el hilo guardado del asistente.",
+        "restoreEvaluation": "No se pudo restaurar la evaluación diagnóstica activa.",
+        "loadDiseases": "No se pudieron cargar las enfermedades.",
+        "saveEvaluation": "No se pudo guardar la evaluación del paciente.",
+        "reachAssistant": "No se pudo contactar al asistente de diagnóstico.",
+        "uploadFile": "No se pudo subir el archivo seleccionado.",
+        "recordFeedback": "No se pudo registrar la retroalimentación del diagnóstico.",
+        "webUploadOnly": "La carga de archivos está disponible solo en la app web.",
+        "readFile": "No se pudo leer el archivo seleccionado.",
+        "translateHistory": "No se pudieron traducir algunas respuestas del asistente. Se muestra el texto original."
+      }
+    },
+    "dashboard": {
+      "sectionLabel": "Panel",
+      "screenSummary": "Resumen operativo de brotes, alertas y capacidad hospitalaria.",
+      "hero": {
+        "eyebrow": "Panel Operativo",
+        "title": "Vigilancia de brotes y monitoreo hospitalario",
+        "description": "Monitoreo en tiempo real de brotes de enfermedades, alertas activas y métricas hospitalarias dentro de tu radio de vigilancia."
+      },
+      "searchPlaceholder": "Buscar expedientes clinicos...",
+      "loading": "Cargando datos del panel medico...",
+      "errorTitle": "Datos del panel no disponibles",
+      "retry": "Reintentar",
+      "radiusControl": {
+        "label": "Rango de analisis",
+        "contextTitle": "Zona de brotes",
+        "contextDescription": "Ajusta el radio usado para recalcular el panel."
+      },
+      "map": {
+        "title": "Mapa de calor en vivo",
+        "overlayTitle": "Mapa de calor",
+        "secure": "Seguro",
+        "highRisk": "Riesgo alto",
+        "emerging": "Emergente",
+        "lowRisk": "Riesgo bajo",
+        "hospitalNode": "Nodo hospitalario",
+        "expand": "Expandir",
+        "viewOtherStates": "Ver otros estados",
+        "stateSelector": "Selector de estados",
+        "stateOutbreaks": "Brotes estatales",
+        "backToStates": "Regresar",
+        "selectStateHint": "Selecciona un estado para ver brotes municipales",
+        "stateOutbreakCount": "{{count}} senales municipales de brote",
+        "lastSyncPending": "Ultima sincronizacion: pendiente",
+        "lastSync": "Ultima sincronizacion: {{time}}"
+      },
+      "alerts": {
+        "title": "Brotes activos más relevantes",
+        "emptyTitle": "Sin alertas activas",
+        "emptyDescription": "No hay senales activas de brotes para el contexto de este hospital.",
+        "activityTitle": "Actividad de {{disease}}",
+        "activityDescription": "{{cases}} en {{area}}. Estado: {{status}}.",
+        "activeCasesLabel": "Casos activos",
+        "showMore": "Mostrar más brotes",
+        "moreEyebrow": "Brotes activos",
+        "moreTitle": "Más brotes contextuales"
+      },
+      "diseaseBreakdown": {
+        "title": "Desglose por enfermedad",
+        "localTitle": "Brotes en el municipio y alrededores",
+        "stateTitle": "Brotes a nivel estatal",
+        "totalActiveCases": "Casos activos totales",
+        "totalStateCases": "Casos estatales totales",
+        "outbreakContext": "Contexto de brotes",
+        "municipalitySurroundings": "{{municipality}} y alrededores",
+        "stateContext": "Estado",
+        "hospitalRegion": "Region hospitalaria",
+        "exportReport": "Exportar reporte completo"
+      },
+      "reports": {
+        "localOptionTitle": "Brotes municipales",
+        "stateOptionTitle": "Brotes estatales",
+        "bothOptionTitle": "Municipales y estatales",
+        "bothOptionDescription": "Incluye ambos contextos en un solo PDF.",
+        "pdfTitle": "Reporte epidemiologico de brotes",
+        "hospital": "Hospital",
+        "generatedAt": "Generado",
+        "scope": "Alcance",
+        "localScope": "Municipal",
+        "stateScope": "Estatal",
+        "bothScope": "Municipal y estatal",
+        "stateSectionTitle": "Brotes estatales",
+        "localSectionTitle": "Brotes municipales",
+        "confirmedSection": "Confirmados",
+        "suspectedSection": "Sospechosos",
+        "diseaseColumn": "Enfermedad",
+        "locationColumn": "Ubicacion",
+        "casesColumn": "Casos",
+        "statusColumn": "Estado",
+        "scopeColumn": "Alcance",
+        "outbreaksColumn": "Brotes",
+        "back": "Regresar",
+        "downloadReport": "Descargar reporte",
+        "previewSubtitle": "Revisa {{count}} brotes antes de aceptar la descarga.",
+        "previewUnavailable": "La vista previa del documento no está disponible en este entorno."
+      },
+      "overlays": {
+        "clinicalMetric": "Metrica clinica",
+        "currentValue": "Situacion actual",
+        "signal": "Indicador",
+        "metricInsights": "Información clínica relevante",
+        "recommendedAction": "Accion recomendada",
+        "alertDetail": "Detalle de alerta",
+        "area": "Area",
+        "priority": "Prioridad",
+        "zoneDetail": "Detalle de brote",
+        "hospitalDetail": "Detalles del hospital",
+        "riskLevel": "Nivel de riesgo",
+        "primaryDisease": "Enfermedad",
+        "state": "Estado",
+        "municipality": "Municipio",
+        "status": "Estatus",
+        "cases": "Casos",
+        "radius": "Radio",
+        "reportPreview": "Vista previa del reporte",
+        "reportTitle": "Resumen del desglose por enfermedad",
+        "reportSubtitle": "Panorama de carga regional y tendencia clinica para las enfermedades activas monitoreadas.",
+        "topSignal": "Senal principal",
+        "topSignalText": "La enfermedad lider en el contexto activo sigue siendo la senal mas fuerte para el triaje clinico.",
+        "areaWatch": "Zona en observacion",
+        "areaWatchText": "Las zonas cercanas con brotes deben mantenerse bajo observacion activa durante este ciclo.",
+        "clinicalRecommendation": "Recomendacion clinica",
+        "clinicalRecommendationText": "Mantener lista la capacidad de triaje y escalar rapidamente presentaciones compatibles de alto riesgo."
+      },
+      "metrics": {
+        "active-cases-nearby": {
+          "title": "Casos activos cercanos",
+          "subtitle": "Casos activos de brotes en el contexto hospitalario",
+          "detailSummary": "Suma de brotes municipales activos dentro del radio del hospital mas los brotes estatales activos del estado del hospital.",
+          "signalLabel": "Carga regional activa",
+          "insightCriteria": "Top de brotes cercanos ordenados por severidad y luego por casos.",
+          "recommendedAction": "Mantener el triaje alineado con las enfermedades activas cerca del hospital."
+        },
+        "highest-case-disease": {
+          "title": "Enfermedad con mas casos",
+          "subtitle": "Mayor conteo de casos activos en el contexto actual",
+          "detailSummary": "Esta metrica reemplaza la proyeccion de crecimiento hasta contar con series historicas semanales.",
+          "signalLabel": "Mayor carga actual",
+          "insightCriteria": "Ubicaciones con mas casos de la enfermedad dominante.",
+          "recommendedAction": "Usar esta senal como contexto epidemiologico, no como diagnostico independiente."
+        },
+        "local-risk-level": {
+          "title": "Nivel de riesgo local",
+          "subtitle": "Basado en brotes activos y casos totales",
+          "detailSummary": "El riesgo se deriva del volumen de brotes activos en el contexto geografico del hospital.",
+          "signalLabel": "Presion regional",
+          "insightCriteria": "Brotes activos mas cercanos al hospital.",
+          "recommendedAction": "Revisar los brotes cercanos antes de evaluar sintomas compatibles."
+        },
+        "priority-municipality": {
+          "title": "Municipio prioritario",
+          "subtitle": "Mayor concentración de brotes prioritarios",
+          "detailSummary": "Agrupa los brotes municipales de severidad alta y moderada dentro del radio seleccionado.",
+          "signalLabel": "Concentración prioritaria",
+          "insightCriteria": "Brotes prioritarios del municipio ordenados por severidad y casos.",
+          "recommendedAction": "Priorizar este municipio al revisar síntomas compatibles y contexto epidemiológico cercano."
+        }
+      }
+    }
+  },
+  "diseases": {
+    "names": {
+      "abscess_of_the_pharynx": "Absceso de la faringe",
+      "acariasis": "Acariasis",
+      "acute_bronchiolitis": "Bronquiolitis aguda",
+      "acute_bronchitis": "Bronquitis aguda",
+      "acute_otitis_media": "Otitis media aguda",
+      "acute_sinusitis": "Sinusitis aguda",
+      "aspergillosis": "Aspergilosis",
+      "athlete_s_foot": "Pie de atleta",
+      "balanitis": "Balanitis",
+      "blastomycosis": "Blastomicosis",
+      "brucellosis": "Brucelosis",
+      "cat_scratch_disease": "Enfermedad por aranazo de gato",
+      "cervicitis": "Cervicitis",
+      "chagas_disease": "Enfermedad de Chagas",
+      "chancroid": "Chancroide",
+      "chickenpox": "Varicela",
+      "chikungunya": "Chikungunya",
+      "chlamydia": "Clamidia",
+      "cholera": "Colera",
+      "cold_sore": "Herpes labial",
+      "common_cold": "Resfriado comun",
+      "congenital_rubella": "Rubeola congenita",
+      "conjunctivitis": "Conjuntivitis",
+      "conjunctivitis_due_to_bacteria": "Conjuntivitis bacteriana",
+      "conjunctivitis_due_to_virus": "Conjuntivitis viral",
+      "covid_19": "COVID-19",
+      "croup": "Crup",
+      "cryptococcosis": "Criptococosis",
+      "cysticercosis": "Cisticercosis",
+      "cytomegalovirus_infection": "Infeccion por citomegalovirus",
+      "dengue_fever": "Fiebre del dengue",
+      "dengue_severe": "Dengue grave",
+      "encephalitis": "Encefalitis",
+      "epididymitis": "Epididimitis",
+      "erysipelas": "Erisipela",
+      "female_genitalia_infection": "Infeccion genital femenina",
+      "flu": "Gripe",
+      "fungal_infection_of_the_hair": "Infeccion fungica del cabello",
+      "fungal_infection_of_the_skin": "Infeccion fungica de la piel",
+      "genital_herpes": "Herpes genital",
+      "gonorrhea": "Gonorrea",
+      "granuloma_inguinale": "Granuloma inguinal",
+      "healthcare_associated_infection": "Infeccion asociada a la atencion medica",
+      "hemorrhagic_fever": "Fiebre hemorragica",
+      "hepatitis_a": "Hepatitis A",
+      "hepatitis_b": "Hepatitis B",
+      "hepatitis_c": "Hepatitis C",
+      "herpangina": "Herpangina",
+      "histoplasmosis": "Histoplasmosis",
+      "hiv_aids": "VIH/SIDA",
+      "hpv": "VPH",
+      "impetigo": "Impetigo",
+      "infectious_gastroenteritis": "Gastroenteritis infecciosa",
+      "influenza": "Influenza",
+      "laryngitis": "Laringitis",
+      "leishmaniasis": "Leishmaniasis",
+      "leprosy": "Lepra",
+      "leptospirosis": "Leptospirosis",
+      "lice": "Pediculosis",
+      "lyme_disease": "Enfermedad de Lyme",
+      "lymphogranuloma_venereum": "Linfogranuloma venereo",
+      "malaria": "Malaria",
+      "male_genitalia_infection": "Infeccion genital masculina",
+      "measles": "Sarampion",
+      "meningitis": "Meningitis",
+      "molluscum_contagiosum": "Molusco contagioso",
+      "mononucleosis": "Mononucleosis",
+      "mpox": "Mpox",
+      "mumps": "Paperas",
+      "myiasis": "Miasis",
+      "onychomycosis": "Onicomicosis",
+      "oral_thrush_yeast_infection": "Candidiasis oral",
+      "other_viral_hepatitis": "Otra hepatitis viral",
+      "otitis_media": "Otitis media",
+      "parasitic_disease": "Enfermedad parasitaria",
+      "paratyphoid_fever": "Fiebre paratifoidea",
+      "pelvic_inflammatory_disease": "Enfermedad inflamatoria pelvica",
+      "peritonsillar_abscess": "Absceso periamigdalino",
+      "pharyngitis": "Faringitis",
+      "pinto_disease": "Pinta",
+      "pinworm_infection": "Oxiuriasis",
+      "pneumonia": "Neumonia",
+      "pyogenic_skin_infection": "Infeccion cutanea piogena",
+      "rabies": "Rabia",
+      "rocky_mountain_spotted_fever": "Fiebre maculosa de las Montanas Rocosas",
+      "rubella": "Rubeola",
+      "scabies": "Sarna",
+      "scarlet_fever": "Escarlatina",
+      "shingles_herpes_zoster": "Herpes zoster",
+      "sporotrichosis": "Esporotricosis",
+      "strep_throat": "Faringitis estreptococica",
+      "syphilis": "Sifilis",
+      "taeniasis": "Teniasis",
+      "tetanus": "Tetanos",
+      "tonsillitis": "Amigdalitis",
+      "toxoplasmosis": "Toxoplasmosis",
+      "tracheitis": "Traqueitis",
+      "trachoma": "Tracoma",
+      "trichinosis": "Triquinosis",
+      "trichomonas_infection": "Infeccion por tricomonas",
+      "tuberculosis": "Tuberculosis",
+      "typhoid_fever": "Fiebre tifoidea",
+      "urethritis": "Uretritis",
+      "vaginal_yeast_infection": "Candidiasis vaginal",
+      "vaginitis": "Vaginitis",
+      "valley_fever": "Fiebre del valle",
+      "viral_exanthem": "Exantema viral",
+      "viral_warts": "Verrugas virales",
+      "west_nile_virus": "Virus del Nilo Occidental",
+      "whooping_cough": "Tos ferina",
+      "yeast_infection": "Candidiasis",
+      "zika": "Zika"
+    }
+  }
+}
